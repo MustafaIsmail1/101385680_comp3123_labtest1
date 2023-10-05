@@ -5,7 +5,7 @@ const resolvedPromise = () =>
 });
 
 
-const rejectPromise = () =>
+const rejectedPromise = () =>
   new Promise((resolve, reject) => {
     setTimeout(reject(
         { error: "delayed exception!" }), 500);
@@ -14,5 +14,5 @@ const rejectPromise = () =>
   resolvedPromise()
   .then((message) => console.log(message));
 
-  rejectPromise()
+  rejectedPromise()
   .catch((message) => console.error(message));
